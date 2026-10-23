@@ -36,50 +36,55 @@ A regra fundamental de dependência neste projeto é:
 
 ```mermaid
 flowchart LR
-    subgraph Driving ["Driving Adapters (Entrada / In)"]
-        REST["RecebimentoController\n(REST API / Multipart CSV)"]
-        WebMapper["RecebimentoWebMapper\n+ DTOs + GlobalExceptionHandler"]
+    subgraph Driving["Driving Adapters (Entrada / In)"]
+        REST["RecebimentoController<br/>(REST API / Multipart CSV)"]
+        WebMapper["RecebimentoWebMapper<br/>+ DTOs + GlobalExceptionHandler"]
     end
 
-    subgraph Core ["Hexágono (Núcleo da Aplicação - Java Puro)"]
+    subgraph Core["Hexágono (Núcleo da Aplicação - Java Puro)"]
         direction TB
-        subgraph PortsIn ["Portas de Entrada (domain.port.in)"]
-            UC1["<<interface>>\nRecebimentoUseCase"]
-            UC2["<<interface>>\nImportarRecebimentosCsvUseCase"]
+
+        subgraph PortsIn["Portas de Entrada (domain.port.in)"]
+            UC1["&lt;&lt;interface&gt;&gt;<br/>RecebimentoUseCase"]
+            UC2["&lt;&lt;interface&gt;&gt;<br/>ImportarRecebimentosCsvUseCase"]
         end
 
-        subgraph App ["Aplicação (application)"]
+        subgraph App["Aplicação (application)"]
             Service["RecebimentoService"]
             Parser["CsvRecebimentoParser"]
         end
 
-        subgraph Domain ["Domínio (domain.model)"]
-            Model["Recebimento\nRecebimentoFormatters\nResultadoImportacaoCsv\nTipoDadoCsv"]
+        subgraph Domain["Domínio (domain.model)"]
+            Model["Recebimento<br/>RecebimentoFormatters<br/>ResultadoImportacaoCsv<br/>TipoDadoCsv"]
         end
 
-        subgraph PortsOut ["Portas de Saída (domain.port.out)"]
-            RepoPort["<<interface>>\nRecebimentoRepositoryPort"]
+        subgraph PortsOut["Portas de Saída (domain.port.out)"]
+            RepoPort["&lt;&lt;interface&gt;&gt;<br/>RecebimentoRepositoryPort"]
         end
     end
 
-    subgraph Driven ["Driven Adapters (Saída / Out)"]
-        PersAdapter["RecebimentoPersistenceAdapter\n+ RecebimentoPersistenceMapper"]
-        JPA["SpringDataRecebimentoRepository\n+ RecebimentoJpaEntity"]
-        SQLite[("Banco SQLite\nTabela: recebimento")]
+    subgraph Driven["Driven Adapters (Saída / Out)"]
+        PersAdapter["RecebimentoPersistenceAdapter<br/>+ RecebimentoPersistenceMapper"]
+        JPA["SpringDataRecebimentoRepository<br/>+ RecebimentoJpaEntity"]
+        SQLite[("Banco SQLite<br/>Tabela: recebimento")]
     end
 
     REST --> WebMapper
     REST --> UC1
     REST --> UC2
-    UC1 <|.. Service
-    UC2 <|.. Service
+
+    Service -.->|implements| UC1
+    Service -.->|implements| UC2
+
     Service --> Parser
     Service --> Model
     Parser --> Model
     Service --> RepoPort
-    RepoPort <|.. PersAdapter
+
+    PersAdapter -.->|implements| RepoPort
     PersAdapter --> JPA
     JPA --> SQLite
+
 ```
 
 ---
