@@ -1,0 +1,511 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1260" width="1920" height="1260" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <!-- Hexagon Core Gradient -->
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <!-- Domain Core Inner Gradient -->
+    <linearGradient id="domainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.65"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="webZoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#082f49" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <linearGradient id="dbZoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Drop Shadow -->
+    <filter id="shadow" x="-6%" y="-6%" width="112%" height="116%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#6366f1" flood-opacity="0.28"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <!-- USA / INJETA (Solid Cyan/Blue) -->
+    <marker id="arrowUses" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 2 L 10 6 L 1 10 z" fill="#38bdf8"/>
+    </marker>
+
+    <!-- IMPLEMENTA (Hollow Triangle Emerald/Green for UML Realization) -->
+    <marker id="arrowImplements" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M 1 2 L 12 7 L 1 12 z" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    </marker>
+
+    <!-- USA DOMINIO (Solid Purple) -->
+    <marker id="arrowDomain" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 2 L 10 6 L 1 10 z" fill="#c084fc"/>
+    </marker>
+
+    <!-- CONFIGURA / BEAN (Dashed Amber) -->
+    <marker id="arrowBean" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 2 L 10 6 L 1 10 z" fill="#fbbf24"/>
+    </marker>
+
+    <!-- EXCECAO (Dashed Rose) -->
+    <marker id="arrowEx" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 2 L 10 6 L 1 10 z" fill="#fb7185"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1260" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Grid Pattern -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.45">
+    <line x1="0" y1="120" x2="1920" y2="120"/>
+    <line x1="0" y1="300" x2="1920" y2="300"/>
+    <line x1="0" y1="480" x2="1920" y2="480"/>
+    <line x1="0" y1="660" x2="1920" y2="660"/>
+    <line x1="0" y1="840" x2="1920" y2="840"/>
+    <line x1="0" y1="1020" x2="1920" y2="1020"/>
+    <line x1="480" y1="0" x2="480" y2="1260"/>
+    <line x1="960" y1="0" x2="960" y2="1260"/>
+    <line x1="1440" y1="0" x2="1440" y2="1260"/>
+  </g>
+
+  <!-- ==================== HEADER ==================== -->
+  <rect x="30" y="20" width="1860" height="82" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="58" y="56" fill="#f8fafc" font-size="24.5" font-weight="800" letter-spacing="0.4">ARQUITETURA HEXAGONAL (PORTS &amp; ADAPTERS) — PROJETO RECEBIMENTO</text>
+  <text x="58" y="84" fill="#94a3b8" font-size="14" font-weight="500">Mapa completo de classes, interfaces, pacotes e relacionamentos: Quem implementa quem (implements/extends) e Quem usa o quê (uses/injects)</text>
+
+  <!-- Legend inside Header (Right Side) -->
+  <g transform="translate(1115, 33)">
+    <rect x="0" y="0" width="750" height="56" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <!-- Implements -->
+    <line x1="20" y1="19" x2="70" y2="19" stroke="#34d399" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrowImplements)"/>
+    <text x="80" y="23" fill="#d1fae5" font-size="12.5" font-weight="700">Implementa / Estende (implements / extends)</text>
+    <!-- Uses -->
+    <line x1="395" y1="19" x2="445" y2="19" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+    <text x="455" y="23" fill="#e0f2fe" font-size="12.5" font-weight="700">Usa / Injeta / Chama (uses / injects)</text>
+    <!-- Uses Domain -->
+    <line x1="20" y1="41" x2="70" y2="41" stroke="#c084fc" stroke-width="2.2" marker-end="url(#arrowDomain)"/>
+    <text x="80" y="45" fill="#f3e8ff" font-size="12.5" font-weight="700">Manipula / Instancia Modelo de Domínio</text>
+    <!-- Bean Config -->
+    <line x1="395" y1="41" x2="445" y2="41" stroke="#fbbf24" stroke-width="2.2" stroke-dasharray="4,4" marker-end="url(#arrowBean)"/>
+    <text x="455" y="45" fill="#fef3c7" font-size="12.5" font-weight="700">Instancia @Bean / Captura Exceção</text>
+  </g>
+
+  <!-- ==================== ZONE CONTAINERS ==================== -->
+  <!-- Left Zone: Driving Adapter -->
+  <rect x="30" y="122" width="430" height="945" rx="16" fill="url(#webZoneGrad)" stroke="#0284c7" stroke-width="2" stroke-dasharray="8,5"/>
+  <rect x="75" y="108" width="340" height="28" rx="6" fill="#0369a1"/>
+  <text x="245" y="127" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800" letter-spacing="0.8">DRIVING ADAPTER (ENTRADA / WEB)</text>
+  <text x="245" y="152" text-anchor="middle" fill="#7dd3fc" font-size="12" font-family="Consolas, monospace">package: infrastructure.adapter.in.web</text>
+
+  <!-- Center Zone: Hexagon -->
+  <polygon points="620,122 1300,122 1425,595 1300,1067 620,1067 495,595"
+           fill="url(#hexGrad)" stroke="#6366f1" stroke-width="3" filter="url(#glow)"/>
+  <rect x="745" y="108" width="430" height="30" rx="8" fill="#4f46e5"/>
+  <text x="960" y="128" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800" letter-spacing="0.8">HEXÁGONO CENTRAL (JAVA PURO — ZERO FRAMEWORKS)</text>
+
+  <!-- Sub-zones inside Hexagon -->
+  <rect x="530" y="160" width="290" height="395" rx="14" fill="#0f172a" fill-opacity="0.7" stroke="#34d399" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <text x="675" y="184" text-anchor="middle" fill="#6ee7b7" font-size="12.5" font-weight="800">PORTAS DE ENTRADA (DRIVING PORTS)</text>
+  <text x="675" y="201" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Consolas, monospace">package: domain.port.in</text>
+
+  <rect x="845" y="160" width="320" height="435" rx="14" fill="#0f172a" fill-opacity="0.7" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <text x="1005" y="184" text-anchor="middle" fill="#fcd34d" font-size="12.5" font-weight="800">CAMADA DE APLICAÇÃO (USE CASES)</text>
+  <text x="1005" y="201" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Consolas, monospace">package: application.service | .parser</text>
+
+  <rect x="1185" y="195" width="215" height="275" rx="14" fill="#0f172a" fill-opacity="0.7" stroke="#34d399" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <text x="1292" y="219" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="800">PORTA DE SAÍDA (DRIVEN PORT)</text>
+  <text x="1292" y="235" text-anchor="middle" fill="#94a3b8" font-size="10.5" font-family="Consolas, monospace">package: domain.port.out</text>
+
+  <rect x="545" y="635" width="845" height="410" rx="16" fill="url(#domainGrad)" stroke="#a855f7" stroke-width="2.2"/>
+
+  <!-- Right Zone: Driven Adapter -->
+  <rect x="1460" y="122" width="430" height="945" rx="16" fill="url(#dbZoneGrad)" stroke="#10b981" stroke-width="2" stroke-dasharray="8,5"/>
+  <rect x="1495" y="108" width="360" height="28" rx="6" fill="#047857"/>
+  <text x="1675" y="127" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800" letter-spacing="0.8">DRIVEN ADAPTER (SAÍDA / PERSISTÊNCIA)</text>
+  <text x="1675" y="152" text-anchor="middle" fill="#6ee7b7" font-size="12" font-family="Consolas, monospace">package: infrastructure.adapter.out.persistence</text>
+
+
+  <!-- ==================== ARROWS & CONNECTIONS (DRAWN BEFORE CARDS/BADGES FOR CLEAN LAYERING) ==================== -->
+  <!-- 1. Cliente HTTP -> RecebimentoController -->
+  <line x1="245" y1="242" x2="245" y2="276" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+  <text x="255" y="264" fill="#7dd3fc" font-size="11" font-weight="700">requisição HTTP</text>
+
+  <!-- 2. RecebimentoController -> RecebimentoWebMapper (USA) -->
+  <line x1="245" y1="540" x2="245" y2="576" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+  <text x="255" y="563" fill="#7dd3fc" font-size="11" font-weight="700">usa (injeta)</text>
+
+  <!-- 3. RecebimentoWebMapper -> Web DTOs -->
+  <line x1="245" y1="755" x2="245" y2="776" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowUses)"/>
+
+  <!-- 4. RecebimentoController -> RecebimentoUseCase (USA Porta de Entrada 1) -->
+  <path d="M 435 350 L 542 300" fill="none" stroke="#38bdf8" stroke-width="2.8" marker-end="url(#arrowUses)"/>
+  <rect x="446" y="302" width="76" height="20" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="484" y="316" text-anchor="middle" fill="#7dd3fc" font-size="10.5" font-weight="700">usa / injeta</text>
+
+  <!-- 5. RecebimentoController -> ImportarRecebimentosCsvUseCase (USA Porta de Entrada 2) -->
+  <path d="M 435 475 L 542 485" fill="none" stroke="#38bdf8" stroke-width="2.8" marker-end="url(#arrowUses)"/>
+  <rect x="446" y="465" width="76" height="20" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="484" y="479" text-anchor="middle" fill="#7dd3fc" font-size="10.5" font-weight="700">usa / injeta</text>
+
+  <!-- 6. RecebimentoService -> RecebimentoUseCase (IMPLEMENTA) -->
+  <line x1="860" y1="295" x2="808" y2="295" stroke="#34d399" stroke-width="2.8" stroke-dasharray="6,4" marker-end="url(#arrowImplements)"/>
+  <rect x="807" y="266" width="52" height="18" rx="4" fill="#064e3b"/>
+  <text x="833" y="279" text-anchor="middle" fill="#a7f3d0" font-size="9.5" font-weight="700">implements</text>
+
+  <!-- 7. RecebimentoService -> ImportarRecebimentosCsvUseCase (IMPLEMENTA) -->
+  <path d="M 860 365 L 832 365 L 832 475 L 808 475" fill="none" stroke="#34d399" stroke-width="2.8" stroke-dasharray="6,4" marker-end="url(#arrowImplements)"/>
+
+  <!-- 8. RecebimentoService -> CsvRecebimentoParser (USA) -->
+  <line x1="1005" y1="421" x2="1005" y2="436" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+  <text x="1048" y="433" fill="#7dd3fc" font-size="10.5" font-weight="700">usa (parse)</text>
+
+  <!-- 9. RecebimentoService -> RecebimentoRepositoryPort (USA Porta de Saída) -->
+  <line x1="1150" y1="330" x2="1193" y2="330" stroke="#38bdf8" stroke-width="2.8" marker-end="url(#arrowUses)"/>
+  <rect x="1146" y="303" width="48" height="18" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="1170" y="316" text-anchor="middle" fill="#7dd3fc" font-size="9.5" font-weight="700">usa</text>
+
+  <!-- 10. RecebimentoPersistenceAdapter -> RecebimentoRepositoryPort (IMPLEMENTA Porta de Saída) -->
+  <path d="M 1485 285 L 1392 315" fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrowImplements)"/>
+  <rect x="1402" y="274" width="76" height="20" rx="4" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+  <text x="1440" y="288" text-anchor="middle" fill="#a7f3d0" font-size="10.5" font-weight="700">implements</text>
+
+  <!-- 11. RecebimentoPersistenceAdapter -> RecebimentoPersistenceMapper (USA) -->
+  <line x1="1620" y1="440" x2="1620" y2="471" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+  <text x="1630" y="460" fill="#7dd3fc" font-size="11" font-weight="700">usa (mapper)</text>
+
+  <!-- 12. RecebimentoPersistenceAdapter -> SpringDataRecebimentoRepository (USA) -->
+  <path d="M 1835 440 L 1835 631" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+  <rect x="1785" y="604" width="90" height="19" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="1830" y="617" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="700">usa (jpaRepo)</text>
+
+  <!-- 13. SpringDataRecebimentoRepository -> RecebimentoJpaEntity (USA/Persiste) -->
+  <line x1="1675" y1="800" x2="1675" y2="826" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+
+  <!-- 14. RecebimentoJpaEntity -> SQLite Database -->
+  <line x1="1675" y1="945" x2="1675" y2="964" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrowUses)"/>
+
+  <!-- 15. Domain Model Connections (Orthogonal clean routing avoiding the center badge) -->
+  <path d="M 885 585 L 885 606 L 702 606 L 702 658" fill="none" stroke="#c084fc" stroke-width="2.2" marker-end="url(#arrowDomain)"/>
+  <path d="M 1115 585 L 1115 606 L 1257 606 L 1257 658" fill="none" stroke="#c084fc" stroke-width="2.2" marker-end="url(#arrowDomain)"/>
+
+  <!-- 16. RecebimentoWebMapper -> Recebimento (Domain) -->
+  <path d="M 435 680 L 561 710" fill="none" stroke="#c084fc" stroke-width="2.2" marker-end="url(#arrowDomain)"/>
+
+  <!-- 17. RecebimentoPersistenceMapper -> Recebimento (Domain) -->
+  <path d="M 1485 540 L 1438 540 L 1438 606 L 745 606 L 745 658" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#arrowDomain)"/>
+
+  <!-- 18. Domain Exceptions -> GlobalExceptionHandler -->
+  <path d="M 565 975 L 439 975" fill="none" stroke="#fb7185" stroke-width="2.2" stroke-dasharray="5,4" marker-end="url(#arrowEx)"/>
+  <rect x="454" y="950" width="95" height="19" rx="4" fill="#0f172a" stroke="#fb7185" stroke-width="1"/>
+  <text x="501" y="963" text-anchor="middle" fill="#fda4af" font-size="10" font-weight="700">captura (@Advice)</text>
+
+  <!-- 19. BeanConfiguration -> RecebimentoService & CsvRecebimentoParser -->
+  <path d="M 475 1090 L 475 568 L 856 568" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-dasharray="5,5" marker-end="url(#arrowBean)"/>
+  <rect x="441" y="795" width="68" height="20" rx="4" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+  <text x="475" y="809" text-anchor="middle" fill="#fde68a" font-size="10" font-weight="700">cria @Bean</text>
+
+  <!-- Domain Core Header Badge (Rendered on top of any crossing lines) -->
+  <rect x="765" y="621" width="405" height="28" rx="6" fill="#7e22ce" stroke="#c084fc" stroke-width="1"/>
+  <text x="967" y="640" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800" letter-spacing="0.6">NÚCLEO DE DOMÍNIO (domain.model &amp; domain.exception)</text>
+
+
+  <!-- ==================== LEFT CARDS (WEB ADAPTER) ==================== -->
+  <!-- External HTTP Client -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="170" width="380" height="72" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8"/>
+    <circle cx="92" cy="206" r="20" fill="#0284c7"/>
+    <text x="92" y="211" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">HTTP</text>
+    <text x="125" y="198" fill="#f8fafc" font-size="15" font-weight="700">Cliente HTTP / Swagger UI / Multipart</text>
+    <text x="125" y="218" fill="#94a3b8" font-size="12">JSON (POST, PUT, GET, DELETE) &amp; Upload Arquivo CSV</text>
+    <text x="125" y="233" fill="#38bdf8" font-size="11" font-family="Consolas, monospace">OpenApiConfiguration (@Configuration)</text>
+  </g>
+
+  <!-- RecebimentoController -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="280" width="380" height="260" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2.2"/>
+    <rect x="55" y="280" width="380" height="34" rx="12" fill="#0284c7"/>
+    <text x="245" y="302" text-anchor="middle" fill="#ffffff" font-size="13.5" font-weight="800">@RestController  RecebimentoController</text>
+    <text x="72" y="334" fill="#7dd3fc" font-size="12" font-weight="700">Injeta e Usa (Atributos final):</text>
+    <text x="78" y="353" fill="#e2e8f0" font-size="12" font-family="Consolas, monospace">• recebimentoUseCase: RecebimentoUseCase</text>
+    <text x="78" y="371" fill="#e2e8f0" font-size="12" font-family="Consolas, monospace">• importarCsvUseCase: ImportarRecebimentosCsvUseCase</text>
+    <text x="78" y="389" fill="#e2e8f0" font-size="12" font-family="Consolas, monospace">• webMapper: RecebimentoWebMapper</text>
+    <line x1="70" y1="401" x2="420" y2="401" stroke="#334155" stroke-width="1"/>
+    <text x="72" y="420" fill="#7dd3fc" font-size="12" font-weight="700">Endpoints REST (/recebimentos):</text>
+    <text x="78" y="439" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ POST   /                        → criar(request)</text>
+    <text x="78" y="456" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ GET    /                        → listarTodos()</text>
+    <text x="78" y="473" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ GET    /{id}                    → buscarPorId(id)</text>
+    <text x="78" y="490" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ PUT    /{id}                    → atualizar(id, req)</text>
+    <text x="78" y="507" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ DELETE /{id}                    → remover(id)</text>
+    <text x="78" y="524" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ GET    /valor-total/cpf/{cpf}   | /periodo</text>
+    <text x="78" y="537" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">+ POST   /importar-csv (MultipartFile)</text>
+  </g>
+
+  <!-- RecebimentoWebMapper -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="580" width="380" height="175" rx="12" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.8"/>
+    <rect x="55" y="580" width="380" height="30" rx="12" fill="#0369a1"/>
+    <text x="245" y="600" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">@Component  RecebimentoWebMapper</text>
+    <text x="72" y="628" fill="#7dd3fc" font-size="11.5" font-weight="700">Converte DTOs Web ↔ Objetos de Domínio:</text>
+    <text x="78" y="647" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toDomain(RecebimentoRequest): Recebimento</text>
+    <text x="78" y="665" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toResponse(Recebimento): RecebimentoResponse</text>
+    <text x="78" y="683" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toImportacaoResponse(ResultadoImportacaoCsv)</text>
+    <text x="78" y="701" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toValorTotalPorCpfResponse(cpf, valorTotal)</text>
+    <text x="78" y="719" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toValorTotalPorPeriodoResponse(ini, fim, total)</text>
+    <text x="78" y="741" fill="#c084fc" font-size="11" font-weight="600">→ Usa Recebimento.aPartirDeTexto() &amp; RecebimentoFormatters</text>
+  </g>
+
+  <!-- Web DTOs -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="780" width="380" height="130" rx="12" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+    <text x="72" y="803" fill="#38bdf8" font-size="12.5" font-weight="800">DTOs Web (Java Records — adapter.in.web.dto)</text>
+    <text x="78" y="823" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">• RecebimentoRequest (cpf, e2e, data, valor)</text>
+    <text x="78" y="840" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">• RecebimentoResponse (id, cpf, e2e, data, valor)</text>
+    <text x="78" y="857" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">• ImportacaoCsvResponse (total, colunas, lista)</text>
+    <text x="78" y="874" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">• ValorTotalPorCpfResponse | ValorTotalPorPeriodoResponse</text>
+    <text x="78" y="891" fill="#cbd5e1" font-size="11.5" font-family="Consolas, monospace">• ErroApiResponse (status, mensagem, timestamp)</text>
+  </g>
+
+  <!-- GlobalExceptionHandler -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="932" width="380" height="118" rx="12" fill="#1e293b" stroke="#fb7185" stroke-width="1.8"/>
+    <rect x="55" y="932" width="380" height="28" rx="12" fill="#be123c"/>
+    <text x="245" y="951" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800">@RestControllerAdvice  GlobalExceptionHandler</text>
+    <text x="72" y="977" fill="#fda4af" font-size="11.5" font-weight="600">Captura Exceções do Domínio → Gera ErroApiResponse:</text>
+    <text x="78" y="996" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">• RecebimentoNaoEncontradoException → HTTP 404</text>
+    <text x="78" y="1014" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">• DomainValidationException         → HTTP 400</text>
+    <text x="78" y="1032" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">• CsvImportException                → HTTP 400</text>
+  </g>
+
+
+  <!-- ==================== CENTER CARDS (HEXAGON CORE) ==================== -->
+  <!-- Interface: RecebimentoUseCase -->
+  <g filter="url(#shadow)">
+    <rect x="546" y="216" width="258" height="205" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="546" y="216" width="258" height="38" rx="10" fill="#065f46"/>
+    <text x="675" y="232" text-anchor="middle" fill="#a7f3d0" font-size="10.5" font-family="Consolas, monospace">&lt;&lt;interface&gt;&gt;</text>
+    <text x="675" y="248" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">RecebimentoUseCase</text>
+    <text x="558" y="274" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ criar(Recebimento): Recebimento</text>
+    <text x="558" y="292" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ buscarPorId(Long): Recebimento</text>
+    <text x="558" y="310" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ listarTodos(): List&lt;Recebimento&gt;</text>
+    <text x="558" y="328" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ atualizar(Long, Recebimento)</text>
+    <text x="558" y="346" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ remover(Long): void</text>
+    <text x="558" y="364" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ calcularValorTotalPorCpf(cpf)</text>
+    <text x="558" y="382" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ calcularValorTotalPorPeriodo(...)</text>
+  </g>
+
+  <!-- Interface: ImportarRecebimentosCsvUseCase -->
+  <g filter="url(#shadow)">
+    <rect x="546" y="440" width="258" height="98" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="546" y="440" width="258" height="38" rx="10" fill="#065f46"/>
+    <text x="675" y="456" text-anchor="middle" fill="#a7f3d0" font-size="10.5" font-family="Consolas, monospace">&lt;&lt;interface&gt;&gt;</text>
+    <text x="675" y="472" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">ImportarRecebimentosCsvUseCase</text>
+    <text x="558" y="500" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ importar(InputStream):</text>
+    <text x="572" y="518" fill="#a7f3d0" font-size="11.2" font-family="Consolas, monospace">ResultadoImportacaoCsv</text>
+  </g>
+
+  <!-- RecebimentoService -->
+  <g filter="url(#shadow)">
+    <rect x="860" y="216" width="290" height="205" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2.2"/>
+    <rect x="860" y="216" width="290" height="36" rx="10" fill="#b45309"/>
+    <text x="1005" y="239" text-anchor="middle" fill="#ffffff" font-size="13.5" font-weight="800">RecebimentoService</text>
+    <text x="874" y="270" fill="#fde68a" font-size="11.5" font-weight="700">Implementa (implements):</text>
+    <text x="880" y="287" fill="#34d399" font-size="11.2" font-family="Consolas, monospace">• RecebimentoUseCase</text>
+    <text x="880" y="304" fill="#34d399" font-size="11.2" font-family="Consolas, monospace">• ImportarRecebimentosCsvUseCase</text>
+    <line x1="872" y1="315" x2="1138" y2="315" stroke="#334155" stroke-width="1"/>
+    <text x="874" y="333" fill="#fde68a" font-size="11.5" font-weight="700">Usa / Injeta via Construtor:</text>
+    <text x="880" y="351" fill="#38bdf8" font-size="11.2" font-family="Consolas, monospace">• repositoryPort: RecebimentoRepositoryPort</text>
+    <text x="880" y="368" fill="#38bdf8" font-size="11.2" font-family="Consolas, monospace">• csvParser: CsvRecebimentoParser</text>
+    <text x="874" y="390" fill="#c084fc" font-size="11" font-weight="600">• Orquestra Recebimento &amp; valida regras</text>
+    <text x="874" y="407" fill="#fda4af" font-size="11" font-weight="600">• Lança RecebimentoNaoEncontradoException</text>
+  </g>
+
+  <!-- CsvRecebimentoParser -->
+  <g filter="url(#shadow)">
+    <rect x="860" y="440" width="290" height="145" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.8"/>
+    <rect x="860" y="440" width="290" height="32" rx="10" fill="#92400e"/>
+    <text x="1005" y="461" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">CsvRecebimentoParser</text>
+    <text x="874" y="489" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ parse(InputStream): ResultadoImportacaoCsv</text>
+    <text x="874" y="507" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ identificarTipoDoValor(String): Optional</text>
+    <line x1="872" y1="518" x2="1138" y2="518" stroke="#334155" stroke-width="1"/>
+    <text x="874" y="536" fill="#c084fc" font-size="11" font-weight="600">• Usa RecebimentoFormatters e TipoDadoCsv</text>
+    <text x="874" y="553" fill="#c084fc" font-size="11" font-weight="600">• Instancia Recebimento.aPartirDeTexto(...)</text>
+    <text x="874" y="570" fill="#fda4af" font-size="11" font-weight="600">• Lança CsvImportException</text>
+  </g>
+
+  <!-- Interface: RecebimentoRepositoryPort -->
+  <g filter="url(#shadow)">
+    <rect x="1197" y="248" width="191" height="208" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect x="1197" y="248" width="191" height="38" rx="10" fill="#065f46"/>
+    <text x="1292" y="264" text-anchor="middle" fill="#a7f3d0" font-size="10.5" font-family="Consolas, monospace">&lt;&lt;interface&gt;&gt;</text>
+    <text x="1292" y="280" text-anchor="middle" fill="#ffffff" font-size="11.8" font-weight="800">RecebimentoRepositoryPort</text>
+    <text x="1206" y="305" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ salvar(Recebimento)</text>
+    <text x="1206" y="323" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ salvarTodos(List)</text>
+    <text x="1206" y="341" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ buscarPorId(Long)</text>
+    <text x="1206" y="359" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ listarTodos()</text>
+    <text x="1206" y="377" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ removerPorId(Long)</text>
+    <text x="1206" y="395" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ existePorId(Long)</text>
+    <text x="1206" y="413" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ somarValorPorCpf(cpf)</text>
+    <text x="1206" y="431" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">+ somarValorPorPeriodo(..)</text>
+  </g>
+
+  <!-- Recebimento (Aggregate / Domain Entity) -->
+  <g filter="url(#shadow)">
+    <rect x="565" y="662" width="275" height="225" rx="10" fill="#1e293b" stroke="#c084fc" stroke-width="2"/>
+    <rect x="565" y="662" width="275" height="32" rx="10" fill="#6b21a8"/>
+    <text x="702" y="683" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">Recebimento (Entidade Imutável)</text>
+    <text x="578" y="709" fill="#e9d5ff" font-size="11.2" font-family="Consolas, monospace">- id: Long | cpf: String (11 dígitos)</text>
+    <text x="578" y="726" fill="#e9d5ff" font-size="11.2" font-family="Consolas, monospace">- e2e: String | data: LocalDateTime</text>
+    <text x="578" y="743" fill="#e9d5ff" font-size="11.2" font-family="Consolas, monospace">- valor: BigDecimal (scale 2)</text>
+    <line x1="575" y1="754" x2="828" y2="754" stroke="#334155" stroke-width="1"/>
+    <text x="578" y="773" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ novo(cpf, e2e, data, valor)</text>
+    <text x="578" y="790" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ aPartirDeTexto(cpf, e2e, dt, vl)</text>
+    <text x="578" y="807" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ comId(Long): Recebimento</text>
+    <text x="578" y="824" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ getDataFormatada() / getValorFormatado()</text>
+    <text x="578" y="848" fill="#c084fc" font-size="11" font-weight="700">→ Usa RecebimentoFormatters no construtor</text>
+    <text x="578" y="865" fill="#fda4af" font-size="11" font-weight="700">→ Lança DomainValidationException</text>
+  </g>
+
+  <!-- RecebimentoFormatters -->
+  <g filter="url(#shadow)">
+    <rect x="860" y="662" width="265" height="225" rx="10" fill="#1e293b" stroke="#c084fc" stroke-width="1.8"/>
+    <rect x="860" y="662" width="265" height="32" rx="10" fill="#581c87"/>
+    <text x="992" y="683" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">RecebimentoFormatters</text>
+    <text x="873" y="710" fill="#d8b4fe" font-size="11" font-weight="700">Regras de Validação e Conversão:</text>
+    <text x="873" y="729" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ normalizarEValidarCpf(String)</text>
+    <text x="873" y="747" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ normalizarEValidarE2e(String)</text>
+    <text x="873" y="765" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ parseDataHora(String)</text>
+    <text x="873" y="783" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ parseDataInicial / parseDataFinal</text>
+    <text x="873" y="801" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ parseValor(String): BigDecimal</text>
+    <text x="873" y="819" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ isCpfValido / isDataValida</text>
+    <text x="873" y="837" fill="#e2e8f0" font-size="11" font-family="Consolas, monospace">+ isValorValido / isE2eValido</text>
+    <text x="873" y="862" fill="#fda4af" font-size="11" font-weight="700">→ Lança DomainValidationException</text>
+  </g>
+
+  <!-- ResultadoImportacaoCsv & TipoDadoCsv -->
+  <g filter="url(#shadow)">
+    <rect x="1145" y="662" width="225" height="225" rx="10" fill="#1e293b" stroke="#c084fc" stroke-width="1.8"/>
+    <rect x="1145" y="662" width="225" height="32" rx="10" fill="#581c87"/>
+    <text x="1257" y="683" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">Value Objects &amp; Enums</text>
+    <text x="1157" y="709" fill="#f0abfc" font-size="11.5" font-weight="700">record ResultadoImportacaoCsv</text>
+    <text x="1162" y="727" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• totalImportados: int</text>
+    <text x="1162" y="744" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• tiposIdentificadosPorColuna</text>
+    <text x="1162" y="761" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• recebimentos: List&lt;Recebimento&gt;</text>
+    <line x1="1155" y1="775" x2="1360" y2="775" stroke="#334155" stroke-width="1"/>
+    <text x="1157" y="795" fill="#f0abfc" font-size="11.5" font-weight="700">enum TipoDadoCsv</text>
+    <text x="1162" y="814" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• CPF ("CPF (11 dígitos)")</text>
+    <text x="1162" y="831" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• E2E ("Identificador E2E")</text>
+    <text x="1162" y="848" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• DATA ("Data yyyy-MM-dd...")</text>
+    <text x="1162" y="865" fill="#e2e8f0" font-size="10.8" font-family="Consolas, monospace">• VALOR ("Valor monetário")</text>
+  </g>
+
+  <!-- Exceções de Domínio -->
+  <g filter="url(#shadow)">
+    <rect x="565" y="902" width="805" height="122" rx="10" fill="#1e1b4b" stroke="#fb7185" stroke-width="1.6"/>
+    <text x="585" y="926" fill="#fda4af" font-size="12.5" font-weight="800">Exceções de Negócio (package: domain.exception — estendem RuntimeException)</text>
+    <text x="585" y="950" fill="#ffe4e6" font-size="11.5" font-family="Consolas, monospace">1. DomainValidationException         → Lançada por Recebimento, RecebimentoFormatters e RecebimentoService</text>
+    <text x="585" y="972" fill="#ffe4e6" font-size="11.5" font-family="Consolas, monospace">2. RecebimentoNaoEncontradoException → Lançada por RecebimentoService quando o ID não existe no banco</text>
+    <text x="585" y="994" fill="#ffe4e6" font-size="11.5" font-family="Consolas, monospace">3. CsvImportException                → Lançada por CsvRecebimentoParser e RecebimentoController no upload CSV</text>
+    <text x="585" y="1014" fill="#fb7185" font-size="11" font-weight="600">* Todas são interceptadas na borda web pelo GlobalExceptionHandler (@RestControllerAdvice)</text>
+  </g>
+
+
+  <!-- ==================== RIGHT CARDS (PERSISTENCE ADAPTER) ==================== -->
+  <!-- RecebimentoPersistenceAdapter -->
+  <g filter="url(#shadow)">
+    <rect x="1485" y="190" width="380" height="250" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2.2"/>
+    <rect x="1485" y="190" width="380" height="34" rx="12" fill="#047857"/>
+    <text x="1675" y="212" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800">@Component  RecebimentoPersistenceAdapter</text>
+    <text x="1502" y="242" fill="#6ee7b7" font-size="12" font-weight="700">Implementa (implements):</text>
+    <text x="1508" y="260" fill="#34d399" font-size="12" font-family="Consolas, monospace">• RecebimentoRepositoryPort (Porta de Saída)</text>
+    <line x1="1500" y1="272" x2="1850" y2="272" stroke="#334155" stroke-width="1"/>
+    <text x="1502" y="291" fill="#7dd3fc" font-size="12" font-weight="700">Injeta e Usa (Atributos final):</text>
+    <text x="1508" y="309" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">• jpaRepository: SpringDataRecebimentoRepository</text>
+    <text x="1508" y="327" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">• mapper: RecebimentoPersistenceMapper</text>
+    <line x1="1500" y1="339" x2="1850" y2="339" stroke="#334155" stroke-width="1"/>
+    <text x="1502" y="358" fill="#6ee7b7" font-size="11.5" font-weight="700">Operações (@Transactional):</text>
+    <text x="1508" y="376" fill="#cbd5e1" font-size="11.2" font-family="Consolas, monospace">• Converte Recebimento ↔ RecebimentoJpaEntity</text>
+    <text x="1508" y="394" fill="#cbd5e1" font-size="11.2" font-family="Consolas, monospace">• Delega save, saveAll, findById, findAll,</text>
+    <text x="1508" y="411" fill="#cbd5e1" font-size="11.2" font-family="Consolas, monospace">  deleteById, existsById e somas ao JPA</text>
+  </g>
+
+  <!-- RecebimentoPersistenceMapper -->
+  <g filter="url(#shadow)">
+    <rect x="1485" y="475" width="380" height="125" rx="12" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.8"/>
+    <rect x="1485" y="475" width="380" height="30" rx="12" fill="#0369a1"/>
+    <text x="1675" y="495" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800">@Component  RecebimentoPersistenceMapper</text>
+    <text x="1502" y="525" fill="#7dd3fc" font-size="11.5" font-weight="700">Mapeador Domínio ↔ JPA (.persistence.mapper):</text>
+    <text x="1508" y="546" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toEntity(Recebimento): RecebimentoJpaEntity</text>
+    <text x="1508" y="566" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ toDomain(RecebimentoJpaEntity): Recebimento</text>
+    <text x="1508" y="586" fill="#c084fc" font-size="11" font-weight="600">→ Isola anotações @Entity fora do Domínio</text>
+  </g>
+
+  <!-- SpringDataRecebimentoRepository -->
+  <g filter="url(#shadow)">
+    <rect x="1485" y="635" width="380" height="165" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1.8"/>
+    <rect x="1485" y="635" width="380" height="36" rx="12" fill="#065f46"/>
+    <text x="1675" y="650" text-anchor="middle" fill="#a7f3d0" font-size="10.5" font-family="Consolas, monospace">&lt;&lt;interface&gt;&gt; @Repository</text>
+    <text x="1675" y="665" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800">SpringDataRecebimentoRepository</text>
+    <text x="1502" y="692" fill="#34d399" font-size="11.5" font-weight="700">Estende (extends):</text>
+    <text x="1508" y="710" fill="#a7f3d0" font-size="11.2" font-family="Consolas, monospace">• JpaRepository&lt;RecebimentoJpaEntity, Long&gt;</text>
+    <line x1="1500" y1="721" x2="1850" y2="721" stroke="#334155" stroke-width="1"/>
+    <text x="1502" y="740" fill="#7dd3fc" font-size="11.5" font-weight="700">Consultas Customizadas (@Query JPQL):</text>
+    <text x="1508" y="759" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ somarValorPorCpf(cpf): BigDecimal</text>
+    <text x="1508" y="777" fill="#e2e8f0" font-size="11.2" font-family="Consolas, monospace">+ somarValorPorPeriodo(ini, fim): BigDecimal</text>
+  </g>
+
+  <!-- RecebimentoJpaEntity -->
+  <g filter="url(#shadow)">
+    <rect x="1485" y="830" width="380" height="115" rx="12" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+    <text x="1502" y="854" fill="#38bdf8" font-size="12.5" font-weight="800">@Entity  RecebimentoJpaEntity</text>
+    <text x="1502" y="872" fill="#94a3b8" font-size="11.2" font-family="Consolas, monospace">@Table(name = "recebimento") — .persistence.entity</text>
+    <text x="1508" y="893" fill="#cbd5e1" font-size="11.2" font-family="Consolas, monospace">• @Id @GeneratedValue id: Long</text>
+    <text x="1508" y="911" fill="#cbd5e1" font-size="11.2" font-family="Consolas, monospace">• cpf (length=11) | e2e (length=100)</text>
+    <text x="1508" y="929" fill="#cbd5e1" font-size="11.2" font-family="Consolas, monospace">• data (LocalDateTime) | valor (15,2)</text>
+  </g>
+
+  <!-- SQLite Database Cylinder -->
+  <g filter="url(#shadow)">
+    <rect x="1485" y="968" width="380" height="82" rx="16" fill="#022c22" stroke="#34d399" stroke-width="2"/>
+    <ellipse cx="1536" cy="1009" rx="26" ry="22" fill="#059669" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="1536" y="1014" text-anchor="middle" fill="#ffffff" font-size="11.5" font-weight="800">SQLite</text>
+    <text x="1576" y="997" fill="#ecfdf5" font-size="13.5" font-weight="800">Banco de Dados SQLite (recebimentodb)</text>
+    <text x="1576" y="1018" fill="#6ee7b7" font-size="11.5" font-family="Consolas, monospace">Tabela física: recebimento</text>
+    <text x="1576" y="1036" fill="#a7f3d0" font-size="10.8">Hibernate Community Dialects (SQLiteDialect)</text>
+  </g>
+
+
+  <!-- ==================== BOTTOM ZONE: INFRASTRUCTURE CONFIG & WIRING ==================== -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="1090" width="1860" height="145" rx="14" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="30" y="1090" width="1860" height="32" rx="14" fill="#b45309"/>
+    <text x="960" y="1111" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800" letter-spacing="0.6">CAMADA DE CONFIGURAÇÃO E INJEÇÃO DE DEPENDÊNCIA (package: infrastructure.config)</text>
+
+    <!-- BeanConfiguration Box -->
+    <rect x="55" y="1134" width="560" height="88" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="75" y="1156" fill="#fde68a" font-size="13" font-weight="800">@Configuration  BeanConfiguration</text>
+    <text x="75" y="1176" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ @Bean csvRecebimentoParser(): new CsvRecebimentoParser()</text>
+    <text x="75" y="1195" fill="#e2e8f0" font-size="11.5" font-family="Consolas, monospace">+ @Bean recebimentoService(RecebimentoRepositoryPort, CsvRecebimentoParser):</text>
+    <text x="105" y="1212" fill="#fcd34d" font-size="11.5" font-family="Consolas, monospace">new RecebimentoService(repositoryPort, csvRecebimentoParser)</text>
+
+    <!-- Summary Table of Relationships inside Bottom Bar -->
+    <rect x="640" y="1134" width="1225" height="88" rx="10" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+    <text x="660" y="1156" fill="#38bdf8" font-size="13" font-weight="800">RESUMO DIRETO: QUEM IMPLEMENTA QUEM &amp; QUEM USA O QUÊ</text>
+    <text x="660" y="1177" fill="#34d399" font-size="11.8" font-family="Consolas, monospace">• [IMPLEMENTA] RecebimentoService ──implements──► RecebimentoUseCase &amp; ImportarRecebimentosCsvUseCase (Portas de Entrada)</text>
+    <text x="660" y="1195" fill="#34d399" font-size="11.8" font-family="Consolas, monospace">• [IMPLEMENTA] RecebimentoPersistenceAdapter ──implements──► RecebimentoRepositoryPort (Porta de Saída)</text>
+    <text x="660" y="1213" fill="#38bdf8" font-size="11.8" font-family="Consolas, monospace">• [USA/INJETA] RecebimentoController ──usa──► Portas de Entrada + WebMapper | RecebimentoService ──usa──► RepositoryPort + CsvParser</text>
+  </g>
+</svg>
